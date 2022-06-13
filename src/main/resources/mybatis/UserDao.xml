@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chenyh.eleme.dao.UserDao">
+    <insert id="addUser" parameterType="user">
+        insert into user(telephone, password, sex) value(#{telephone}, #{password}, #{sex})
+    </insert>
+
+    <update id="updateUser" parameterType="user">
+        update user set sex = #{sex} where telephone = #{telephone}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        delete from user where telephone = #{telephone}
+    </delete>
+</mapper>
